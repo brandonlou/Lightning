@@ -1,34 +1,32 @@
-int counter = 0;
-
-int startX, startY, endX, endY;
-
-int red = (int)(Math.random()*255);
-int green = (int)(Math.random()*255);
-int blue = (int)(Math.random()*255);
-
+float[20] points;
 
 void setup() {
+	frameRate(60);
 	size(500,500);
-	frameRate(10);
+	background(0);
 	strokeWeight(5);
 }
 
-
 void draw() {
+}
+
+void mousePressed() {
 	background(0);
-	startX = mouseX;
-	startY = mouseY;
-	while(counter <=50) {
-		if(counter == 50) {
-			line(startX, startY, width,height/2);
-		}
-		endX = startX + (int)(Math.random()*10);
-		endY = startY + (int)(Math.random()*20-10);
-		stroke(red, green, blue);
-		line(startX, startY, endX, endY);
-		startX = endX;
-		startY = endY;
-		counter++;
+	int x1 = mouseX;
+	int y1 = mouseY;
+	int x2 = width;
+	int y2 = height/2;
+
+	stroke(0,255,0);
+	//line(x1, y1, x2, y2);
+
+	for (int i = 0; i <= 10; i++) {
+ 		float x = lerp(x1, x2, i/10.0) + 10;
+ 		float y = lerp(y1, y2, i/10.0);
+ 		points[points.length + 1] = x;
+ 		points[points.length + 1] = y;
+
+ 		//point(x, y);
 	}
-	counter = 0;
+	System.out.println(points.length);
 }
