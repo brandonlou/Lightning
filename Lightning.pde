@@ -12,13 +12,9 @@ void setup() {
 }
 
 void draw() {
-	fill(0,255,0);
-	noStroke();
-	rect(0,200,300,100);
 	red = (int)(Math.random()*255);
 	green = (int)(Math.random()*255);
 	blue = (int)(Math.random()*255);
-
 	while (y2 < 300) {
 		x2 = x1 + (int)(Math.random()*20-10);
 		y2 = y1 + (int)(Math.random()*10);
@@ -27,6 +23,9 @@ void draw() {
 		x1 = x2;
 		y1 = y2;
 	}
+	fill(0,255,0);
+	noStroke();
+	rect(0,200,300,100);
 }
 
 void mousePressed() {
