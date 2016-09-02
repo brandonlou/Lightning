@@ -3,6 +3,8 @@ int y1 = 0;
 int x2 = mouseX;
 int y2 = 0;
 
+int red,green,blue;
+
 void setup() {
 	size(300, 300);
 	background(0);
@@ -10,10 +12,17 @@ void setup() {
 }
 
 void draw() {
+	fill(0,255,0);
+	noStroke();
+	rect(0,200,300,100);
+	red = (int)(Math.random()*255);
+	green = (int)(Math.random()*255);
+	blue = (int)(Math.random()*255);
+
 	while (y2 < 300) {
 		x2 = x1 + (int)(Math.random()*20-10);
 		y2 = y1 + (int)(Math.random()*10);
-		stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		stroke(red,blue,blue);
 		line(x1, y1, x2, y2);
 		x1 = x2;
 		y1 = y2;
