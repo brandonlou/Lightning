@@ -1,4 +1,4 @@
-FloatList points = new FloatList();
+ArrayList<Float> points = new ArrayList<Float>();
 
 float startX, startY, endX, endY;
 
@@ -19,8 +19,8 @@ void draw() {
 	for (int i = 0; i <= 10; i++) {
  		float x = lerp(x1, x2, i/10.0) + 10;
  		float y = lerp(y1, y2, i/10.0);
- 		points.append(x);
- 		points.append(y);
+ 		points.add(x);
+ 		points.add(y);
 	}
 
 	int red = (int)(Math.random()*255);
